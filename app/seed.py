@@ -78,6 +78,7 @@ def _normalize_type(val: str | None) -> str | None:
 def _load_parts(session) -> int:
     """Read beyblade_parts.csv and bulk-insert Part rows."""
     df = pd.read_csv(_PARTS_CSV, dtype=str)
+    df.columns = df.columns.str.strip()
 
     parts = []
     for _, row in df.iterrows():
@@ -113,6 +114,7 @@ def _load_parts(session) -> int:
 def _load_combos(session) -> int:
     """Read combos.csv and bulk-insert Combo rows."""
     df = pd.read_csv(_COMBOS_CSV, dtype=str)
+    df.columns = df.columns.str.strip()
 
     combos = []
     for _, row in df.iterrows():
@@ -148,6 +150,7 @@ def _load_combos(session) -> int:
 def _load_performance(session) -> int:
     """Read combo_performance.csv and bulk-insert ComboPerformance rows."""
     df = pd.read_csv(_PERF_CSV, dtype=str)
+    df.columns = df.columns.str.strip()
 
     records = []
     for _, row in df.iterrows():

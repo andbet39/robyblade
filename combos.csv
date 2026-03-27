@@ -1,4 +1,4 @@
-.venv/bin/streamlit run main.pycombo_key,combo_url_base,blade,assist_blade,ratchet,bit,lock_chip,blade_type,blade_spin,blade_weight_g,blade_contact_points,ratchet_weight_g,ratchet_gears,ratchet_burst_resistance,bit_type,bit_weight_g,bit_height_mm,assist_type,assist_weight_g,assist_high_level_mm
+combo_key,combo_url_base,blade,assist_blade,ratchet,bit,lock_chip,blade_type,blade_spin,blade_weight_g,blade_contact_points,ratchet_weight_g,ratchet_gears,ratchet_burst_resistance,bit_type,bit_weight_g,bit_height_mm,assist_type,assist_weight_g,assist_high_level_mm
 WizardRod|None|1-60|Hexa|None,https://beybladexmeta.com/combo/WizardRod|None|1-60|Hexa|None,WizardRod,None,1-60,Hexa,None,Stamina,Right,35.0,,6.0,,,Balance,3.0,,,,
 SharkScale|None|1-70|LowRush|None,https://beybladexmeta.com/combo/SharkScale|None|1-70|LowRush|None,SharkScale,None,1-70,LowRush,None,Attack,Right,37.0,,6.0,,,Attack,2.0,,,,
 SilverWolf|None|9-60|FreeBall|None,https://beybladexmeta.com/combo/SilverWolf|None|9-60|FreeBall|None,SilverWolf,None,9-60,FreeBall,None,Stamina,Right,36.0,,6.0,,,Stamina,2.0,,,,
