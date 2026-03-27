@@ -14,6 +14,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import streamlit as st
+from app.seed import ensure_seeded
+
+# Auto-seed the SQLite DB from CSVs on first boot (required on Streamlit Cloud
+# where beyblade.db is not committed to the repository).
+ensure_seeded()
 
 st.set_page_config(
     page_title="Beyblade Analytics",

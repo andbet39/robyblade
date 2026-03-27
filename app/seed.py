@@ -199,5 +199,45 @@ def seed():
     print(f"\nDatabase ready: {engine.url}")
 
 
+def ensure_seeded() -> None:
+    """
+    Idempotent bootstrap for Streamlit Cloud (and fresh local checkouts).
+
+    Creates tables if they do not exist, then seeds from the CSV files if the
+    ``parts`` table is empty. Safe to call on every app startup — it is a
+    no-op when the database is already populated.
+    """
+    from sqlalchemy import inspect, text
+    from sqlalchemy.orm import Session
+
+    # Always ensure schema exists (harmless if already present)
+    Base.metadata.create_all(engine)
+
+    inspector = inspect(engine)
+    if "parts" not in inspector.get_table_names():
+        # Tables were just created — seed unconditionally
+        _do_seed()
+        return
+
+    with engine.connect() as conn:
+        count = conn.execute(text("SELECT COUNT(*) FROM parts")).scalar()
+
+    if count == 0:
+        _do_seed()
+
+
+def _do_seed() -> None:
+    """Internal helper: load all CSVs into the (already-created) tables."""
+    from sqlalchemy.orm import Session
+
+    with Session(engine) as session:
+        _load_parts(session)
+        _load_combos(session)
+        _load_performance(session)
+        session.commit()
+
+    print(f"Database seeded from CSVs → {engine.url}")
+
+
 if __name__ == "__main__":
     seed()
