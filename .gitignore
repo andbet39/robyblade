@@ -1,0 +1,108 @@
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+wheels/
+.eggs/
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Type checker / linter caches
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.dmypy.json
+dmypy.json
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+nosetests.xml
+pytest.xml
+
+# =============================================================================
+# Project-specific generated files
+# =============================================================================
+
+# SQLite database (rebuilt from CSVs via: python app/seed.py)
+beyblade.db
+
+# Trained ML model artifacts (rebuilt via: python ml/train.py)
+models/
+
+# =============================================================================
+# Jupyter / IPython
+# =============================================================================
+.ipynb_checkpoints/
+*.ipynb
+
+# =============================================================================
+# Streamlit
+# =============================================================================
+.streamlit/secrets.toml
+
+# =============================================================================
+# Environment / secrets
+# =============================================================================
+.env
+.env.*
+*.env
+!*.env.example
+secrets.toml
+*.pem
+*.key
+
+# =============================================================================
+# Editors & IDEs
+# =============================================================================
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains
+.idea/
+*.iml
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+\#*\#
+
+# =============================================================================
+# macOS
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# =============================================================================
+# Logs & temporary files
+# =============================================================================
+*.log
+*.tmp
+*.bak
+*.orig
+tmp/
+temp/
